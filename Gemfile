@@ -29,3 +29,7 @@ gem 'spring',        group: :development
 # Adding bootstrap
 gem 'bootstrap-sass' 
 
+group :production do
+	gem 'rails_12factor'
+end
+
