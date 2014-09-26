@@ -9,15 +9,12 @@ class PinsController < ApplicationController
   def show
   end
 
-
   def new
     @pin = Pin.new
   end
 
-
   def edit
   end
-
 
   def create
     @pin = Pin.new(pin_params)
@@ -33,7 +30,6 @@ class PinsController < ApplicationController
     end
   end
 
-
   def update
     respond_to do |format|
       if @pin.update(pin_params)
@@ -46,7 +42,6 @@ class PinsController < ApplicationController
     end
   end
 
-
   def destroy
     @pin.destroy
     respond_to do |format|
@@ -56,7 +51,6 @@ class PinsController < ApplicationController
   end
 
   private
-
     def set_pin
       @pin = Pin.find(params[:id])
     end
