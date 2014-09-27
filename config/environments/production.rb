@@ -79,4 +79,18 @@ Rails.application.configure do
   #Required for Heroku
   #Not to set this to actual host
   config.action_mailer.default_url_options = { host: 'pinteresting17.herokuapp.com', port: 3000 }
+
+  #Sets paperclip to upload iamges to Amazon S3
+  #Note that this is not actually enabled- no need to pay the $ for a project like this, but if it were to go into production, connnecting to S3 for images on Heroku is way to go
+  # config.paperclip_defaults = {
+  #   :storage => :s3,
+  #   :s3_credentials => {
+  #     :bucket => ENV['AWS_BUCKET'],
+  #     :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
+  #     :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
+  #   }
+  # }
+  config.serve_static_assets = true
+  config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect'
+  config.assets.compile = true
 end
